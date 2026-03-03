@@ -9,7 +9,7 @@ import orderRouter from './routes/orderRouter.js';
 import helmet from 'helmet'
 // import ExpressMongoSanitize from 'express-mongo-sanitize';
 import {v2 as cloudinary} from 'cloudinary'
-
+import cors from 'cors'
 
 dotenv.config();
 
@@ -24,6 +24,7 @@ cloudinary.config({
 
 app.use(helmet())
 // app.use(ExpressMongoSanitize())
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));

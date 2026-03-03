@@ -25,7 +25,7 @@ const HomeContent = () => {
     React.useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await customAPI.get("/product/");
+          const res = await customAPI.get("/product");
           setProducts(res.data.data || []);
         } catch (error) {
           console.log(error);

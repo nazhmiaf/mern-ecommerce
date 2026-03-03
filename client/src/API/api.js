@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const customAPI = axios.create({
-  baseURL: '/api/v1',
+  baseURL: `${import.meta.env.VITE_API_URL}/api/v1`,
   timeout: 10000,
   headers: {'X-Custom-Header': 'foobar'}
 });
