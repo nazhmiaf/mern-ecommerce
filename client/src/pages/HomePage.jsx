@@ -3,7 +3,7 @@ import HomeContent from "../components/HomeContent";
 import TabList from "../components/TabList";
 
 const HomePage = () => {
-  console.log(import.meta.env.VITE_API_URL);
+  
   return (
     <>
       <HeroCarousel />
