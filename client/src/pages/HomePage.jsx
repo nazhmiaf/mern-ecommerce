@@ -7,8 +7,7 @@ const HomePage = () => {
   return (
     <>
       <HeroCarousel />
-      <div className="px-4 py-10 sm:px-6 md:px-10 lg:px-20 xl:px-64 min-h-dvh">
-        <TabList/>
+      <div className="mx-4 py-10 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-72 min-h-dvh">
         <HomeContent/>
       </div>
     </>

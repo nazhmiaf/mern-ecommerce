@@ -16,9 +16,9 @@ const productSchema = new mongoose.Schema({
     required : [true, "Product description is required"],
   },
   category : {
-    type : String,
+    type : Schema.Types.ObjectId,
+    ref : "Category",
     required : [true, "Product category is required"],
-    enum : ["Motherboard", "CPU", "VGA", "RAM", "SSD", "PSU", "Casing", "Fan/Cooler", "Peripheral", "HDD", "Accessories"]
   },  
   stock : {
     type : Number,

@@ -16,7 +16,7 @@ export default function Carousel() {
         disableOnInteraction: false,
       }}
       speed={600}
-      className="h-[180px] sm:h-[200px] md:h-[500px]"
+      className="h-dvh"
     >
       {[slide1, slide2, slide3].map((img, index) => (
         <SwiperSlide key={index}>

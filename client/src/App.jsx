@@ -8,6 +8,8 @@ import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import AboutPage from "./pages/AboutPage";
 import DetailProduct from "./pages/DetailProduct";
+import { loader as HomeLoader } from "./components/HomeContent";
+import { loader as ProductLoader } from "./pages/ProductPage";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +19,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+        loader: HomeLoader
       },
       {
         path: "product",
         element: <ProductPage />,
+        loader: ProductLoader
       },
       {
         path: "order",

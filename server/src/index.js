@@ -6,6 +6,7 @@ import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
 import cookieParser from 'cookie-parser';
 import productRouter from './routes/productRouter.js';
 import orderRouter from './routes/orderRouter.js';
+import categoryRouter from './routes/categoryRouter.js';
 import helmet from 'helmet'
 // import ExpressMongoSanitize from 'express-mongo-sanitize';
 import {v2 as cloudinary} from 'cloudinary'
@@ -33,6 +34,7 @@ app.use(express.static('src/public'));
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/order', orderRouter)
+app.use('/api/v1/category', categoryRouter)
 
 app.use(notFound);
 app.use(errorHandler);

@@ -28,13 +28,13 @@ const Footer = () => {
       <nav>
         <h6 className="footer-title text-base-content">Social</h6>
         <div className="grid grid-flow-col gap-4">
-          <a className="cursor-pointer">
+          <a href="https://github.com/nazhmiaf" className="cursor-pointer">
             <FaGithub className="text-2xl text-base-content" />
           </a>
-          <a className="cursor-pointer">
+          <a href="https://www.instagram.com/nazhmiaf_/" className="cursor-pointer">
             <FaInstagram  className="text-base-100 text-2xl text-base-content" />
           </a>
-          <a className="cursor-pointer">
+          <a href="https://www.linkedin.com/in/nazhmiaf/" className="cursor-pointer">
             <FaLinkedin className="text-base-100 text-2xl text-base-content" />
           </a>
         </div>

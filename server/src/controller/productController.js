@@ -14,8 +14,25 @@ export const createProduct = asyncHandler(async (req, res) => {
 export const getProducts = asyncHandler(async (req, res) => {
   const queryObject = { ...req.query };
 
-  const excludeField = ["page", "limit"];
+  const excludeField = ["page", "limit", "sort"];
   excludeField.forEach((el) => delete queryObject[el]);
+
+  let sortOptions = {createdAt : -1};
+
+  if (req.query.sort) {
+    if (req.query.sort === "price-asc") {
+      sortOptions = { price: 1 };
+    }
+    if (req.query.sort === "price-desc") {
+      sortOptions = { price: -1 };
+    }
+    if (req.query.sort === "sold") {
+      sortOptions = { sold: -1 };
+    }
+    if (req.query.sort === "newest") {
+      sortOptions = { createdAt: -1 };
+    }
+  }
 
   let query;
 
@@ -28,12 +45,12 @@ export const getProducts = asyncHandler(async (req, res) => {
   }
 
   const page = req.query.page * 1 || 1;
-  const limitData = req.query.limit * 1 || 30;
+  const limitData = req.query.limit * 1 || 80;
   const skipData = (page - 1) * limitData;
 
-  query = query.skip(skipData).limit(limitData);
+  query = query.sort(sortOptions).skip(skipData).limit(limitData);
 
-  let countProduct = await Product.countDocuments();
+  let countProduct = await Product.countDocuments(queryObject);
 
   if (req.query.page) {
     if (skipData >= countProduct) {
@@ -43,11 +60,16 @@ export const getProducts = asyncHandler(async (req, res) => {
   }
 
   const products = await query;
+  const totalPages = Math.ceil(countProduct / limitData)
 
   return res.status(200).json({
     message: "Products fetched successfully",
     data: products,
-    count: countProduct,
+    pagination : {
+      totalPages,
+      page,
+      totalProducts : countProduct
+    }
   });
 });
 

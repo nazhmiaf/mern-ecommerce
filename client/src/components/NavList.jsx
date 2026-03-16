@@ -1,38 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const links = [
-  {
-    id: 1,
-    url: "/about",
-    text: "About",
-  },
-  {
-    id: 2,
-    url: "/products",
-    text: "Products",
-  },
-  {
-    id: 3,
-    url: "/order",
-    text: "Order",
-  },
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Product", path: "/product" },
+  { name: "About", path: "/about" },
 ];
 
 const NavList = () => {
   return (
-    <>
-      {links.map((link) => {
-        const { id, url, text } = link;
-        return (
-          <li key={id}>
-            <NavLink to={url} className="capitalize">
-              {text}
-            </NavLink>
-          </li>
-        );
-      })}
-    </>
+    <nav className="flex items-center justify-center gap-8">
+      {navItems.map((item) => (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          end={item.path === "/"}
+          className={({ isActive }) =>
+            `relative text-sm md:text-base transition-all duration-300
+            ${
+              isActive
+                ? "text-primary font-semibold"
+                : "text-gray-500 font-medium hover:text-base-content"
+            }`
+          }
+        >
+          {item.name}
+        </NavLink>
+      ))}
+    </nav>
   );
 };
 
