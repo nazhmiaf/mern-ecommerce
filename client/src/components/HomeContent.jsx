@@ -85,7 +85,7 @@ const HomeContent = () => {
   return (
     <div>
       <h1 className="my-7 font-semibold text-xl md:text-2xl">
-        Best Selling Products
+        Best Seller
       </h1>
       <PopularProductHero />
       <div className="mt-5 bg-base-100 p-6 md:p-10 shadow-md rounded-box">

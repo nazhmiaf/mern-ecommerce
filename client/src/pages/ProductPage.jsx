@@ -66,9 +66,7 @@ const ProductPage = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-10 min-h-dvh">
         <div className="mt-10 flex flex-col lg:flex-row gap-6">
           {/* Sidebar */}
-          <div className="hidden lg:block">
             <SideBarCategory categories={categories} />
-          </div>
 
           {/* Main */}
           <main className="flex-1 w-full px-2 sm:px-0">
