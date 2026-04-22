@@ -1,10 +1,10 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 
-const Pagination = () => {
+const Pagination = ({ loading }) => {
   const { pagination } = useLoaderData();
 
   const { totalPages } = pagination;
-  const page = Number(pagination.page); 
+  const page = Number(pagination.page);
 
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
@@ -20,19 +20,21 @@ const Pagination = () => {
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   return (
-    <div className="join mt-10">
-      {pages.map((pageNumber) => (
-        <button
-          key={pageNumber}
-          onClick={() => handlePageChange(pageNumber)}
-          className={`btn join-item bg-base-100 ${
-            pageNumber === page ? "bg-base-200" : ""
-          }`}
-        >
-          {pageNumber}
-        </button>
-      ))}
-    </div>
+    !loading && (
+      <div className="join mt-10">
+        {pages.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => handlePageChange(pageNumber)}
+            className={`btn join-item bg-base-100 ${
+              pageNumber === page ? "bg-base-200" : ""
+            }`}
+          >
+            {pageNumber}
+          </button>
+        ))}
+      </div>
+    )
   );
 };
 

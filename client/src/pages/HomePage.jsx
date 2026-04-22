@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <>
       <HeroCarousel />
-      <div className="mx-4 py-10 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-72 min-h-dvh">
+      <div className="mx-4 py-10 sm:mx-6 md:mx-10 lg:mx-20 xl:mx-60 min-h-dvh">
         <HomeContent/>
       </div>
     </>

@@ -7,7 +7,7 @@ const CardProduct = ({ item }) => {
   return (
     <Link
       to={`/product/${item._id}`}
-      className="card bg-base-100 w-full shadow-sm hover:shadow-md hover:-translate-y-1 cursor-pointer h-72 transition-all duration-300"
+      className="card bg-base-100 w-full hover:shadow-lg hover:shadow-md hover:-translate-y-1 cursor-pointer h-72 transition-all duration-300"
     >
       {/* IMAGE */}
       <figure className="h-40 md:h-44 lg:h-36 overflow-hidden">

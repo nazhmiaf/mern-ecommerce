@@ -84,7 +84,7 @@ const ProductPage = () => {
               />
 
               <div className="flex justify-center w-full">
-                <Pagination />
+                <Pagination loading={loading} />
               </div>
             </div>
           </main>

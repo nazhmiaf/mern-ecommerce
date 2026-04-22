@@ -108,7 +108,7 @@ const HomeContent = () => {
       <div className="mt-7"></div>
       <div className="mt-10 bg-base-100 ">
         <h1 className="font-semibold text-2xl">All Products</h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-5">
           {loading &&
             Array.from({ length: 12 }).map((_, index) => (
               <CardProductSkeleton key={index} />
